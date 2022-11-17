@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MapsActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+    <LinearLayout
+        android:id="@+id/transportOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="150sp">
+
+        <ImageView
+            android:id="@+id/driving"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:background="@color/colorTrendingEnd"
+            android:padding="8sp"
+            android:layout_margin="2sp"
+            android:src="@drawable/ic_driving" />
+
+
+        <ImageView
+            android:id="@+id/cycling"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:background="@color/colorTrendingEnd"
+            android:padding="8sp"
+            android:layout_margin="2sp"
+
+            android:src="@drawable/ic_bicycle" />
+
+        <ImageView
+            android:id="@+id/walking"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:background="@color/colorTrendingEnd"
+            android:padding="8sp"
+            android:layout_margin="2sp"
+            android:src="@drawable/ic_walking" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="150sp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/locationSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dashboardBackground"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:orientation="horizontal">
+    <ImageView
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_source"/>
+        <EditText
+            android:id="@+id/startlocation"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/circular_background"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:hint=" Enter Start Location"
+            android:textColorHint="@color/cian" />
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_destination"/>
+
+        <EditText
+            android:id="@+id/destinationLocation"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            android:layout_width="match_parent"
+            android:focusableInTouchMode="true"
+            android:layout_height="60dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/circular_background"
+            android:gravity="center"
+            android:hint="Enter Destination"
+            android:textColorHint="@color/cian" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--    <LinearLayout-->
+<!--        android:id="@+id/followerLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/colorTrendingStart"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:padding="10sp"
+        android:background="@color/dashboardBackground">
+
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/cardview_dark_background"
+            android:text="@string/Save"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+            />
+
+        <ImageView
+            android:id="@+id/alertButton"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10sp"
+            android:background="@drawable/ic_siren" />
+
+        <TextView
+            android:id="@+id/etd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:hint="Expected time"
+            android:src="@drawable/ic_search"
+            android:textColor="@color/white"
+            android:textColorHint="@color/colorGrey"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            android:layout_centerInParent="true"/>
+
+        <LinearLayout
+            android:id="@+id/countDownTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/text_view_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/button_start_pause"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/text_view_countdown"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:src="@drawable/ic_start" />-->
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/abort"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10sp"
+            android:background="@drawable/ic_multiply"
+            android:onClick="abortActivity" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:background="@color/dashboardBackground"
+            android:layout_width="match_parent"
+            android:layout_height="120sp"
+        android:padding="10sp"
+            tools:listitem="@layout/item_contact"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+</FrameLayout>
